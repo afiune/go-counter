@@ -20,6 +20,6 @@ func processRequest(w http.ResponseWriter, r *http.Request) {
 	// TODO(afiune) make it atomic
 	REQUESTS++
 	msg := fmt.Sprintf("{\"req_num\":%d,\"status\":\"processed\"}", REQUESTS)
+	fmt.Fprintf(w, msg+"\n")
 	fmt.Println(msg)
-	fmt.Fprintf(w, msg)
 }
